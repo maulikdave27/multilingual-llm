@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search Page</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #f0f0f0;
+  padding: 20px 10px;
+  display: flex;
+  justify-content: space-between; /* Align items horizontally */
+}
+
+.header h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.container {
+  padding: 20px;
+}
+
+.search-box {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.search-box select {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.search-box input {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  flex-grow: 1; 
+}
+
+.search-box button {
+  padding: 5px 10px;
+  border: none;
+  
+  margin-left: 1%;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<header class="header">
+  <h1>Medical Consultant Bot</h1>
+</header>
+<div class="container">
+    <form method="POST" action="/search">
+        <div class="search-box">
+          <select name="language">
+            <option value="Hindi">Hindi</option>
+            <option value="Tamil">Tamil</option>
+			      <option value="Telugu">Telugu</option>
+			      <option value="Bengali">Bengali</option>
+			      <option value="Gujrati">Gujrati</option>
+			      <option value="Malyalam">Malyalam</option>
+			      <option value="Marathi">Marathi</option>
+			      <option value="Punjabi">Punjabi</option>
+          </select>
+          <input type="text" name="query" placeholder="Enter your query">
+          <button type="submit">Submit</button>
+        </div>
+    </form>
+    
+    <div class="content">
+      <p>{{ response }}</p>
+    </div>
+  </div>
+</body>
+</html>
